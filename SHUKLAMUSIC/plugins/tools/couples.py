@@ -28,7 +28,7 @@ POLICE = [
     [
         InlineKeyboardButton(
             text="𝗦𝗨𝗣𝗣𝗢𝗥𝗧",
-            url=f"https://t.me/MASTIWITHFRIENDSXD",
+            url=f"https://t.me/+0PYdr4hTM6c2MTA1",
         ),
     ],
 ]
