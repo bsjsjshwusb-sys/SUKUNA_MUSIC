@@ -26,9 +26,9 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Bot and owner info
-OWNER_USERNAME = getenv("OWNER_USERNAME", "SHIVANSHDEVS")
-BOT_USERNAME = getenv("BOT_USERNAME", "SapnaMusicRobot")
-BOT_NAME = getenv("BOT_NAME", "SAPNA")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "SukunaVillanMusicbot")
+BOT_USERNAME = getenv("BOT_USERNAME", "SukunaVillanMusicbot")
+BOT_NAME = getenv("BOT_NAME", "SUKUNA")
 ASSUSERNAME = getenv("ASSUSERNAME", "KHWAAISH_HOON")
 
 # MongoDB
@@ -36,8 +36,8 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 # Limits and IDs
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
-LOGGER_ID = int(getenv("LOGGER_ID", -1002018556839))
-OWNER_ID = int(getenv("OWNER_ID", 6762113050))
+LOGGER_ID = int(getenv("LOGGER_ID", -1004343389182))
+OWNER_ID = int(getenv("OWNER_ID", 8981292724))
 
 # Heroku
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
@@ -45,13 +45,13 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 DEEP_API = getenv("DEEP_API")
 
 # Git
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/itzshukla/STRANGER-MUSIC")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/s88564264-art/SUKUNA_MUSIC")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
 # Support
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ITSZSHUKLA")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/MASTIWITHFRIENDSXD")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/VillainLoves1")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+0PYdr4hTM6c2MTA1")
 
 # Assistant settings
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "True")
@@ -93,15 +93,15 @@ DEBUG_IGNORE_LOG = True
 
 ###### IMAGE URLS ######
 
-START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/ak96mx.jpg")
-PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/ak96mx.jpg")
-PLAYLIST_IMG_URL = "https://files.catbox.moe/lrwbj6.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/ak96mx.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/aesldg.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/aesldg.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
+START_IMG_URL = getenv("START_IMG_URL", "https://i.ibb.co/wFYHydxw/uploaded-image.jpg")
+PING_IMG_URL = getenv("PING_IMG_URL", "https://i.ibb.co/wFYHydxw/uploaded-image.jpg")
+PLAYLIST_IMG_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+STATS_IMG_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+TELEGRAM_AUDIO_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+TELEGRAM_VIDEO_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+STREAM_IMG_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+SOUNCLOUD_IMG_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
+YOUTUBE_IMG_URL = "https://i.ibb.co/wFYHydxw/uploaded-image.jpg"
 SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/aesldg.jpg"
