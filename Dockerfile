@@ -6,15 +6,15 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
+# Working directory
 WORKDIR /app
 
-# Copy project
+# Copy repository
 COPY . .
 
-# Install Python dependencies
-RUN python -m pip install --no-cache-dir --upgrade pip \
-    && python -m pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN python3 -m pip install --no-cache-dir --upgrade pip \
+    && python3 -m pip install --no-cache-dir -r requirements.txt
 
-# Start bot
-CMD ["python", "main.py"]
+# Start SUKUNA MUSIC
+CMD ["python3", "-m", "SHUKLAMUSIC"]
