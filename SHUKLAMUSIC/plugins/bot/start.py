@@ -267,7 +267,7 @@ async def start_pm(client, message: Message, _):
         )
 
         await message.reply_video(
-            "https://files.catbox.moe/0lz6ue.mp4",
+            "https://image.zaw-myo.workers.dev/video/c072fc2e-1c4e-4888-9d1a-302451004d1e",
             caption=final_caption,
             reply_markup=InlineKeyboardMarkup(out),
         )
