@@ -5,7 +5,6 @@ asyncio
 bard
 beautifulsoup4
 bs4
-dpypython
 emojis
 ffmpeg-python
 gitpython
@@ -14,7 +13,7 @@ gtts
 hachoir
 heroku3
 httpx
-instaloadloader
+instaloader
 lexica-api
 motor
 numpy
@@ -28,7 +27,7 @@ pydub
 pyfiglet
 pykeyboard
 python-dotenv
-python-whots
+python-whos
 pyshoreteners
 pyttsx3
 pytz
