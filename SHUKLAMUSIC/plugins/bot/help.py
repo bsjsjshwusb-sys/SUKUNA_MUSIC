@@ -1,16 +1,11 @@
-# -----------------------------------------------
-# 🔸 StrangerMusic Project
-# 🔹 Developed & Maintained by: Shashank Shukla (https://github.com/itzshukla)
-# 📅 Copyright © 2022 – All Rights Reserved
 #
-# 📖 License:
-# This source code is open for educational and non-commercial use ONLY.
-# You are required to retain this credit in all copies or substantial portions of this file.
-# Commercial use, redistribution, or removal of this notice is strictly prohibited
-# without prior written permission from the author.
+# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
 #
-# ❤️ Made with dedication and love by ItzShukla
-# -----------------------------------------------
+# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > which is released
+# under the "GNU v3.0 License Agreement".
+# Please see LICENSE in this file for more information.
+#
+
 import random
 from typing import Union
 from pyrogram import filters, types
@@ -18,25 +13,23 @@ from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
 from SHUKLAMUSIC import app
 from SHUKLAMUSIC.utils import help_pannel
 from SHUKLAMUSIC.utils.database import get_lang
-from SHUKLAMUSIC.utils.decorators.language import LanguageStart, languageCB
-from SHUKLAMUSIC.utils.inline.help import help_back_markup, private_help_panel
+from SHUKLAMUSIC.utils.decorators.language import LanguageStart, LanguageCB
+from SHUKLAMUSIC.utils.inline import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT, SHASHANK_IMG
 from strings import get_string, helpers
 from SHUKLAMUSIC.utils.stuffs.buttons import BUTTONS
 from SHUKLAMUSIC.utils.stuffs.helper import Helper
 
 EFFECT_IDS = [
-    5046509860389126442,
-    5107584321108051014,
-    5104841245755180586,
-    5159385139981059251,
+    5104659368318912644,
+    510758432100051014,
+    516484245755180500,
+    515938513998159251,
 ]
 
 @app.on_message(filters.command(["help"]) & filters.private & ~BANNED_USERS)
-@app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
-async def helper_private(
-    client: app, update: Union[types.Message, types.CallbackQuery]
-):
+@LanguageStart
+async def helper_private(client, update: Union[types.Message, types.CallbackQuery]):
     is_callback = isinstance(update, types.CallbackQuery)
     if is_callback:
         try:
@@ -47,9 +40,12 @@ async def helper_private(
         language = await get_lang(chat_id)
         _ = get_string(language)
         keyboard = help_pannel(_, True)
-        await update.edit_message_text(
-            _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
-        )
+        try:
+            await update.edit_message_text(
+                _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
+            )
+        except:
+            pass
     else:
         try:
             await update.delete()
@@ -70,14 +66,13 @@ async def helper_private(
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
     await message.reply_text(
-        _["help_2"], 
+        _["help_2"],
         reply_markup=InlineKeyboardMarkup(keyboard),
         message_effect_id=random.choice(EFFECT_IDS),
     )
 
-
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
-@languageCB
+@LanguageCB
 async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
@@ -113,28 +108,24 @@ async def helper_cb(client, CallbackQuery, _):
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
 
+@app.on_callback_query(filters.regex("abot_cb") & ~BANNED_USERS)
+@LanguageCB
+async def helper_cb(client, CallbackQuery, _):
+    CallbackQuery.edit_message_text(Helper.HELP_M, reply_markup=InlineKeyboardMarkup(BUTTONS.WBUTTON))
 
-@app.on_callback_query(filters.regex("mbot_cb") & ~BANNED_USERS)
-async def helper_cb(client, CallbackQuery):
-    await CallbackQuery.edit_message_text(Helper.HELP_M, reply_markup=InlineKeyboardMarkup(BUTTONS.MBUTTON))
+@app.on_callback_query(filters.regex("managebot_cb") & ~BANNED_USERS)
+@LanguageCB
+async def helper_cb(client, CallbackQuery, _):
+    CallbackQuery.edit_message_text(Helper.HELP_M, reply_markup=InlineKeyboardMarkup(BUTTONS.WBUTTON))
 
-
-@app.on_callback_query(filters.regex('managebot123'))
-async def on_back_button(client, CallbackQuery):
+@app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
+@LanguageCB
+async def helper_cb(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
     keyboard = help_pannel(_, True)
-    if cb == "settings_back_helper":
+    if cb == "help":
         await CallbackQuery.edit_message_text(
             _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
         )
-
-@app.on_callback_query(filters.regex('mplus'))      
-async def mb_plugin_button(client, CallbackQuery):
-    callback_data = CallbackQuery.data.strip()
-    cb = callback_data.split(None, 1)[1]
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"mbot_cb")]])
-    if cb == "Okieeeeee":
-        await CallbackQuery.edit_message_text(f"`something errors`",reply_markup=keyboard,parse_mode=enums.ParseMode.MARKDOWN)
-    else:
-        await CallbackQuery.edit_message_text(getattr(Helper, cb), reply_markup=keyboard)
+        
