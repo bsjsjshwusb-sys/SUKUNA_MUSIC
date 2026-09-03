@@ -28,6 +28,7 @@ pykeyboard
 python-dotenv
 pytz
 pyrofork
+pyromod
 py-tgcalls
 pyrogram==2.0.106
 pyyaml
