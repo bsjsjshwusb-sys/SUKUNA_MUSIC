@@ -2,7 +2,6 @@ aiofiles
 aiohttp
 apscheduler
 asyncio
-bard
 beautifulsoup4
 bs4
 emojis
@@ -27,9 +26,6 @@ pydub
 pyfiglet
 pykeyboard
 python-dotenv
-python-whos
-pyshoreteners
-pyttsx3
 pytz
 pyrofork
 py-tgcalls
