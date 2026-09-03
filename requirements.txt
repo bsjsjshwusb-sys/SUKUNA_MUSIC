@@ -6,7 +6,7 @@ beautifulsoup4
 bs4
 certifi
 emoji
-ffmpeging-python
+ffmpeg-python
 gitpython
 gpytranslate
 gtts
@@ -42,4 +42,3 @@ wget
 youtube-search
 youtube-search-python
 yt-dlp
-
